@@ -2,8 +2,8 @@
 const Home = () => {
   return (
     <>
-      <div className='flex items-center justify-center pt-20 animate__animated animate__fadeIn animate__slower'>
-        <p>WELCOME</p>
+      <div className='animate__animated animate__fadeIn animate__slower'>
+        <p className='font-sans text-3xl sm:text-8xl text-white'>WELCOME</p>
       </div>
     </>
   )

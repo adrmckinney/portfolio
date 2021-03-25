@@ -29,7 +29,10 @@ module.exports = {
         fuchsia: colors.fuchsia,
         pink: colors.pink,
         black: colors.black
-      }
+      },
+      backgroundImage: theme => ({
+        'coffee-shop': "url('./images/jonas-jacobsson-1iTKoFJvJ6E-unsplash.jpg')"
+      })
     }
   },
   variants: {
