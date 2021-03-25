@@ -35,5 +35,18 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('tailwindcss-animatecss')({
+      classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut', 'animate__slow', 'animate__slower', 'animate__delay', 'animate__delay-1', 'animate__fast'],
+      settings: {
+        animatedSpeed: 5000,
+        heartBeatSpeed: 1000,
+        hingeSpeed: 2000,
+        bounceInSpeed: 750,
+        bounceOutSpeed: 750,
+        animationDelaySpeed: 1000
+      },
+      variants: ['responsive', 'hover', 'reduced-motion']
+    })
+  ]
 }

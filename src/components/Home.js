@@ -2,7 +2,7 @@
 const Home = () => {
   return (
     <>
-      <div className='flex justify-center pt-20 transition-opacity duration-500 opacity-50 hover:opacity-100 ease-in'>
+      <div className='flex items-center justify-center pt-20 animate__animated animate__fadeIn animate__slower'>
         <p>WELCOME</p>
       </div>
     </>
