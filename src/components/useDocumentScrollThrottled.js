@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { throttle } from 'lodash'
 
-const ScrollFunction = (callback) => {
+const useDocumentScrollThrottled = callback => {
   const [, setScrollPosition] = useState(0)
   let previousScrollTop = 0
 
@@ -9,7 +9,7 @@ const ScrollFunction = (callback) => {
     const { scrollTop: currentScrollTop } = document.documentElement || document.body
 
     setScrollPosition(previousPosition => {
-      previousScrollTop = previousPosition
+      previousScrollTop = 0
       return currentScrollTop
     })
     callback({ previousScrollTop, currentScrollTop })
@@ -24,4 +24,4 @@ const ScrollFunction = (callback) => {
   }, [])
 }
 
-export default ScrollFunction
+export default useDocumentScrollThrottled

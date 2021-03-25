@@ -1,8 +1,26 @@
 import tailwindLogo from '../images/tailwindLogo.svg'
 import reactLogo from '../images/reactLogo.svg'
 import { useState } from 'react'
+import useDocumentScrollThrottled from '../components/useDocumentScrollThrottled'
 
-const Nav = ({ handleScroll, showSolidNav }) => {
+const Nav = ({ handleScroll }) => {
+  const [showSolidNav, setShowSolidNav] = useState(false)
+
+  const MINIMUM_SCROLL = 0
+  const TIMEOUT_DELAY = 0
+
+  useDocumentScrollThrottled(callbackData => {
+    const { previousScrollTop, currentScrollTop } = callbackData
+    const isScrolledDown = previousScrollTop < currentScrollTop
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL
+
+    setShowSolidNav(currentScrollTop > 2)
+
+    setTimeout(() => {
+      setShowSolidNav(isScrolledDown && isMinimumScrolled)
+    }, TIMEOUT_DELAY)
+  })
+
   const [showMenu, setShowMenu] = useState(false)
   return (
     <>
@@ -50,26 +68,26 @@ const Nav = ({ handleScroll, showSolidNav }) => {
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
                   <span
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                     onClick={() => handleScroll('homeRef')}
                   >Home
                   </span>
 
                   <span
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                     onClick={() => handleScroll('aboutRef')}
                   >About
                   </span>
 
                   <span
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                     onClick={() => handleScroll('projectsRef')}
                   >Projects
                   </span>
 
                   <span
                     href='#'
-                    className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                     onClick={() => handleScroll('quickAppsRef')}
                   >Quick Apps
                   </span>
@@ -77,28 +95,27 @@ const Nav = ({ handleScroll, showSolidNav }) => {
               </div>
             </div>
             <div className='hidden sm:block sm:ml-6'>
-              <div className='flex space-x-4'>
+              <div className='flex space-x-1'>
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
-                <span className='text-gray-300 px-3 py-2 rounded-md text-sm font-medium self-center'>Site Powered By:</span>
+                <span className={`${showSolidNav ? 'text-gray-300' : 'text-gray-200'} px-2 py-2 rounded-md text-sm font-medium self-center`}>Site Powered By:</span>
 
                 <a
                   href='https://reactjs.org/'
-                  className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md
-                  text-sm font-medium'
+                  className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                   rel='noreferrer'
                   target='_blank'
                 >
-                  <img className='h-10 w-auto' src={reactLogo} alt='react logo' />
+                  <img className='h-8 w-auto' src={reactLogo} alt='react logo' />
                 </a>
 
                 <a
-                  className={`${showSolidNav ? 'bg-gray-500' : 'bg-none'} px-3 py-2 rounded-md text-sm font-medium self-center`}
+                  className={`${showSolidNav ? 'bg-gray-500' : 'bg-none hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium self-center`}
                   href='https://tailwindcss.com/'
                   rel='noreferrer'
                   target='_blank'
                 >
-                  <img className='h-4 w-auto' src={tailwindLogo} alt='tailwind logo' />
+                  <img className='h-3 w-auto' src={tailwindLogo} alt='tailwind logo' />
                 </a>
               </div>
             </div>

@@ -31,7 +31,8 @@ module.exports = {
         black: colors.black
       },
       backgroundImage: theme => ({
-        'coffee-shop': "url('./images/jonas-jacobsson-1iTKoFJvJ6E-unsplash.jpg')"
+        'coffee-shop': "url('./images/jonas-jacobsson-1iTKoFJvJ6E-unsplash.jpg')",
+        computer: "url('./images/clement-helardot-95YRwf6CNw8-unsplash.jpg')"
       })
     }
   },
@@ -40,7 +41,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animatecss')({
-      classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut', 'animate__slow', 'animate__slower', 'animate__delay', 'animate__delay-1', 'animate__fast'],
+      classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut', 'animate__slow', 'animate__slower', 'animate__delay', 'animate__delay-5', 'animate__fast'],
       settings: {
         animatedSpeed: 5000,
         heartBeatSpeed: 1000,
