@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import './App.css'
 import About from './components/About'
@@ -12,6 +12,7 @@ function App () {
   const aboutRef = useRef()
   const projectsRef = useRef()
   const quickAppsRef = useRef()
+  const [image, setImage] = useState('')
 
   const handleScroll = ref => {
     if (ref === 'homeRef') {
@@ -30,9 +31,15 @@ function App () {
       <div className='fixed w-full top-0 z-10'>
         <Nav handleScroll={handleScroll} />
       </div>
-      <div ref={homeRef} className='bg-computer bg-no-repeat bg-cover h-screen w-full flex items-center justify-center'>
-        <Home />
-      </div>
+      <span>
+        {/* <div className='bg-white bg-opacity-40 w-full h-full absolute inset-0' /> */}
+        <div
+          ref={homeRef}
+          className='bg-moon bg-no-repeat bg-cover bg-center sm:bg-center h-screen w-full flex flex-col justify-center items-center'
+        >
+          <Home />
+        </div>
+      </span>
       <div ref={aboutRef} className='bg-indigo-200 h-screen'>
         <About />
       </div>
