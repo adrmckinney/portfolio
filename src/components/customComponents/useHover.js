@@ -4,7 +4,7 @@ import { useCallback, useRef, useState } from 'react'
 
 const useHover = () => {
   const [value, setValue] = useState(false)
-  console.log('useHover is called')
+
   // Wrap in useCallback so we can use in dependencies below
   const handleMouseEnter = useCallback(() => setValue(true), [])
   const handleMouseLeave = useCallback(() => setValue(false), [])

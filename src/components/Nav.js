@@ -5,6 +5,7 @@ import useDocumentScrollThrottled from './customComponents/useDocumentScrollThro
 
 const Nav = ({ handleScroll }) => {
   const [showSolidNav, setShowSolidNav] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   const MINIMUM_SCROLL = 0
   const TIMEOUT_DELAY = 0
@@ -21,7 +22,6 @@ const Nav = ({ handleScroll }) => {
     }, TIMEOUT_DELAY)
   })
 
-  const [showMenu, setShowMenu] = useState(false)
   return (
     <>
       <nav className={`${showSolidNav ? 'bg-gray-800' : 'bg-none'}`}>

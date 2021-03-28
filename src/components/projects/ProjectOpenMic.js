@@ -9,7 +9,15 @@ const ProjectOpenMic = () => {
         ref={hoverRef}
         className='col-span-1 flex flex-col text-center bg-blueGray-700 transition duration-500 ease-in-out rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
       >
+        {/* <div className='sm:hidden text-right mr-6'>
+          <button
+            className='text-white'
+            onClick={() => useHover(setValue(false))}
+          >close
+          </button>
+        </div> */}
         <div className='flex flex-col justify-around p-4 h-full text-white'>
+
           <p>A musician’s app for bands to find new members and solo artists to find a band.</p>
           <span className='flex justify-around'>
             <div>

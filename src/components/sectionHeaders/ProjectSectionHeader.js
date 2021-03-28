@@ -2,7 +2,7 @@
 const ProjectSectionHeader = () => {
   return (
     <>
-      <div className='pb-5 pt-20 pl-20 border-b border-blueGray-700 bg-white'>
+      <div className='pb-5 pt-20 px-4 sm:pl-20 border-b border-blueGray-700 bg-white'>
         <h3 className='text-2xl leading-6 font-medium text-blueGray-700'>
           School Projects
         </h3>

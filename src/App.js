@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import './App.css'
 import About from './components/About'
@@ -12,13 +12,12 @@ function App () {
   const aboutRef = useRef()
   const projectsRef = useRef()
   const quickAppsRef = useRef()
-  const [image, setImage] = useState('')
 
   const handleScroll = ref => {
     if (ref === 'homeRef') {
       return homeRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'aboutRef') {
-      return aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return aboutRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'projectsRef') {
       return projectsRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'quickAppsRef') {
@@ -31,22 +30,19 @@ function App () {
       <div className='fixed w-full top-0 z-50'>
         <Nav handleScroll={handleScroll} />
       </div>
-      <span>
-        {/* <div className='bg-white bg-opacity-40 w-full h-full absolute inset-0' /> */}
-        <div
-          ref={homeRef}
-          className='bg-close-computer bg-no-repeat bg-cover bg-center sm:bg-center h-screen w-full flex flex-col justify-center items-center'
-        >
-          <Home />
-        </div>
-      </span>
-      <div ref={aboutRef} className='bg-blueGray-100 h-screen'>
+      <div
+        ref={homeRef}
+        className='bg-black bg-close-computer bg-no-repeat bg-contain md:bg-cover bg-center md:bg-center h-screen w-full flex flex-col justify-center items-center'
+      >
+        <Home />
+      </div>
+      <div ref={aboutRef} className='bg-blueGray-100 md:h-screen'>
         <About />
       </div>
-      <div ref={projectsRef} className='bg-blueGray-100 h-screen'>
+      <div ref={projectsRef} className='bg-blueGray-100 sm:h-screen'>
         <Projects />
       </div>
-      <div ref={quickAppsRef} className='bg-blueGray-100 h-screen'>
+      <div ref={quickAppsRef} className='bg-blueGray-100 sm:h-screen'>
         <QuickApps />
       </div>
     </div>
