@@ -24,7 +24,7 @@ const Nav = ({ handleScroll }) => {
 
   return (
     <>
-      <nav className={`${showSolidNav ? 'bg-gray-800' : 'bg-none'}`}>
+      <nav className={`${showSolidNav ? 'sm:bg-gray-800' : 'bg-none'}`}>
         <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
           <div className='relative flex items-center justify-between h-16'>
             <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
