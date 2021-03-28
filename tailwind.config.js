@@ -37,7 +37,8 @@ module.exports = {
         moon: "url('./images/abed-ismail-_jhUrn9o8yM-unsplash.jpg')",
         greetly: "url('./images/greetly-title.png')",
         trivia: "url('./images/triviaFour.png')",
-        snippet: "url('./images/snippetDate.png')"
+        snippet: "url('./images/snippetDate.png')",
+        covid: "url('./images/covid.png')"
       })
     }
   },

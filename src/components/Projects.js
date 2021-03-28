@@ -14,7 +14,6 @@ const Projects = () => {
         <ProjectTriviaNight />
         <ProjectSnippets />
       </ul>
-
     </>
   )
 }

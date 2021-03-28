@@ -28,7 +28,7 @@ function App () {
 
   return (
     <div className='App h-screen'>
-      <div className='fixed w-full top-0 z-10'>
+      <div className='fixed w-full top-0 z-50'>
         <Nav handleScroll={handleScroll} />
       </div>
       <span>
@@ -46,7 +46,7 @@ function App () {
       <div ref={projectsRef} className='bg-blueGray-100 h-screen'>
         <Projects />
       </div>
-      <div ref={quickAppsRef} className='bg-purple-300 h-screen'>
+      <div ref={quickAppsRef} className='bg-blueGray-100 h-screen'>
         <QuickApps />
       </div>
     </div>
