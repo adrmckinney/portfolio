@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 
 const useHover = () => {
   // useHover custom hook from https://usehooks.com/useHover/
+  // The one only works once
   const [value, setValue] = useState(false)
-
+  console.log('useHover is called')
   const ref = useRef(null)
 
   const handleMouseOver = () => setValue(true)
@@ -12,12 +13,12 @@ const useHover = () => {
   useEffect(() => {
     const node = ref.current
     if (node) {
-      node.addEventListener('mouseover', handleMouseOver)
-      node.addEventListener('mouseout', handleMouseOut)
+      node.addEventListener('mouseenter', handleMouseOver)
+      node.addEventListener('mouseleave', handleMouseOut)
 
       return () => {
-        node.removeEventListener('mouseover', handleMouseOver)
-        node.removeEventListener('mouseout', handleMouseOut)
+        node.removeEventListener('mouseenter', handleMouseOver)
+        node.removeEventListener('mouseleave', handleMouseOut)
       }
     }
   }, [ref.current])

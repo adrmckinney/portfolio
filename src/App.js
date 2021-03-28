@@ -43,7 +43,7 @@ function App () {
       <div ref={aboutRef} className='bg-indigo-200 h-screen'>
         <About />
       </div>
-      <div ref={projectsRef} className='bg-blueGray-500 h-screen'>
+      <div ref={projectsRef} className='bg-blueGray-100 h-screen'>
         <Projects />
       </div>
       <div ref={quickAppsRef} className='bg-purple-300 h-screen'>

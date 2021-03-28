@@ -1,6 +1,6 @@
 import useHover from '../customComponents/useHover'
 
-const ProjectOpenMic = () => {
+const ProjectSnippets = () => {
   const [hoverRef, isHovered] = useHover()
 
   if (isHovered) {
@@ -10,24 +10,21 @@ const ProjectOpenMic = () => {
         className='col-span-1 flex flex-col text-center bg-blueGray-700 transition duration-500 ease-in-out rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
       >
         <div className='flex flex-col justify-around p-4 h-full text-white'>
-          <p>A musician’s app for bands to find new members and solo artists to find a band.</p>
+          <p>Snippet Manager lets you store your common codes and easily copy them for use.</p>
           <span className='flex justify-around'>
             <div>
               <h5 className='font-semibold border-b-2 border-blueGray-400'>Front End</h5>
-              <p className='text-blue-400'>React</p>
-              <p className='text-blue-400'>Tailwindcss</p>
-              <p className='text-blue-400'>Axios</p>
+              <p className='text-blue-400'>JavaScript</p>
             </div>
             <div>
               <h5 className='font-semibold border-b-2 border-blueGray-400'>Back End</h5>
-              <p className='font-light'>Django</p>
-              <p className='font-light'>REST</p>
-              <p className='font-light'>Djoser</p>
+              <p className='font-light text-blue-400'>Django</p>
+              <p className='font-light text-blue-400'>Django-Reg-Redux</p>
             </div>
           </span>
           <span className='flex justify-evenly'>
             <a
-              href='https://open-mic.netlify.app'
+              href='https://snippet-manage.herokuapp.com/'
               rel='noreferrer'
               target='_blank'
               type='button'
@@ -40,7 +37,7 @@ const ProjectOpenMic = () => {
               </svg>
             </a>
             <a
-              href='https://github.com/team-open-mic/open-mic/tree/main/frontend'
+              href='https://github.com/adrmckinney/snippet-manager'
               rel='noreferrer'
               target='_blank'
               type='button'
@@ -63,10 +60,10 @@ const ProjectOpenMic = () => {
     <>
       <li
         ref={hoverRef}
-        className='col-span-1 flex flex-col text-center bg-openMic bg-cover bg-center rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
+        className='col-span-1 flex flex-col text-center bg-snippet bg-cover bg-left rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
       />
     </>
   )
 }
 
-export default ProjectOpenMic
+export default ProjectSnippets

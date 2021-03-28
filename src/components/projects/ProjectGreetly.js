@@ -1,27 +1,70 @@
+import useHover from '../customComponents/useHover'
 
 const ProjectGreetly = () => {
+  const [hoverRef, isHovered] = useHover()
+
+  if (isHovered) {
+    return (
+      <li
+        ref={hoverRef}
+        className='col-span-1 flex flex-col text-center bg-blueGray-700 transition duration-500 ease-in-out rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
+      >
+        <div className='flex flex-col justify-around p-4 h-full text-white'>
+          <p>Make custom greeting cards for any occasion</p>
+          <span className='flex justify-around'>
+            <div>
+              <h5 className='font-semibold border-b-2 border-blueGray-400'>Front End</h5>
+              <p className='text-blue-400'>React</p>
+              <p className='text-blue-400'>Axios</p>
+              <p className='text-blue-400'>Unsplash API</p>
+            </div>
+            <div>
+              <h5 className='font-semibold border-b-2 border-blueGray-400'>Back End</h5>
+              <p className='font-light'>Django</p>
+              <p className='font-light'>REST</p>
+              <p className='font-light'>Djoser</p>
+            </div>
+          </span>
+          <span className='flex justify-evenly'>
+            <a
+              href='https://greetly-cards-generator.netlify.app/'
+              rel='noreferrer'
+              target='_blank'
+              type='button'
+              className='inline-flex items-center justify-around px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emarald-600 hover:bg-emarald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            >
+              Visit Site
+              <svg className='w-6 h-6 animate-pulse' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
+                <path fillRule='evenodd' d='M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z' clipRule='evenodd' />
+                <path fillRule='evenodd' d='M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z' clipRule='evenodd' />
+              </svg>
+            </a>
+            <a
+              href='https://github.com/momentum-projects/group-social-ecards-david-dan-jesse/tree/main/frontend'
+              rel='noreferrer'
+              target='_blank'
+              type='button'
+              className='inline-flex items-center justify-around px-3.5 py-2 border border-transparent text-sm leading-4 font-medium rounded-full shadow-sm text-white bg-emarald-600 hover:bg-emarald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            >
+              See Code
+              <svg className='w-6 h-6 animate-pulse' fill='currentColor' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'>
+                <path fillRule='evenodd' d='M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z' clipRule='evenodd' />
+                <path fillRule='evenodd' d='M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z' clipRule='evenodd' />
+              </svg>
+            </a>
+          </span>
+        </div>
+
+      </li>
+    )
+  }
+
   return (
     <>
-      <li className='col-span-1 flex shadow-sm rounded-md'>
-        <div className='flex-shrink-0 flex items-center justify-center w-16 bg-purple-600 text-white text-sm font-medium rounded-l-md'>
-          CD
-        </div>
-        <div className='flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate'>
-          <div className='flex-1 px-4 py-2 text-sm truncate'>
-            <a href='#' className='text-gray-900 font-medium hover:text-gray-600'>Greetly</a>
-            <p className='text-gray-500'>12 Members</p>
-          </div>
-          <div className='flex-shrink-0 pr-2'>
-            <button className='w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full bg-transparent hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
-              <span className='sr-only'>Open options</span>
-              {/* <!-- Heroicon name: solid/dots-vertical --> */}
-              <svg className='w-5 h-5' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' aria-hidden='true'>
-                <path d='M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z' />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </li>
+      <li
+        ref={hoverRef}
+        className='col-span-1 flex flex-col text-center bg-greetly bg-cover bg-center rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
+      />
     </>
   )
 }

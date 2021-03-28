@@ -1,7 +1,7 @@
 import tailwindLogo from '../images/tailwindLogo.svg'
 import reactLogo from '../images/reactLogo.svg'
 import { useState } from 'react'
-import useDocumentScrollThrottled from '../components/useDocumentScrollThrottled'
+import useDocumentScrollThrottled from './customComponents/useDocumentScrollThrottled'
 
 const Nav = ({ handleScroll }) => {
   const [showSolidNav, setShowSolidNav] = useState(false)
@@ -82,7 +82,7 @@ const Nav = ({ handleScroll }) => {
                   <span
                     className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
                     onClick={() => handleScroll('projectsRef')}
-                  >Projects
+                  >School Projects
                   </span>
 
                   <span
@@ -152,7 +152,7 @@ const Nav = ({ handleScroll }) => {
                   setShowMenu(false)
                   handleScroll('projectsRef')
                 }}
-              >Projects
+              >School Projects
               </span>
 
               <span

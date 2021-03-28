@@ -1,6 +1,6 @@
 import useHover from '../customComponents/useHover'
 
-const ProjectOpenMic = () => {
+const ProjectTriviaNight = () => {
   const [hoverRef, isHovered] = useHover()
 
   if (isHovered) {
@@ -10,24 +10,18 @@ const ProjectOpenMic = () => {
         className='col-span-1 flex flex-col text-center bg-blueGray-700 transition duration-500 ease-in-out rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
       >
         <div className='flex flex-col justify-around p-4 h-full text-white'>
-          <p>A musician’s app for bands to find new members and solo artists to find a band.</p>
+          <p>It's Trivia Night! Gather with friends, grab some drinks, get your teams, and play some trivia!</p>
           <span className='flex justify-around'>
             <div>
               <h5 className='font-semibold border-b-2 border-blueGray-400'>Front End</h5>
               <p className='text-blue-400'>React</p>
-              <p className='text-blue-400'>Tailwindcss</p>
               <p className='text-blue-400'>Axios</p>
-            </div>
-            <div>
-              <h5 className='font-semibold border-b-2 border-blueGray-400'>Back End</h5>
-              <p className='font-light'>Django</p>
-              <p className='font-light'>REST</p>
-              <p className='font-light'>Djoser</p>
+              <p className='text-blue-400'>Open Trivia DB API</p>
             </div>
           </span>
           <span className='flex justify-evenly'>
             <a
-              href='https://open-mic.netlify.app'
+              href='https://trivia-night-adrm.netlify.app/'
               rel='noreferrer'
               target='_blank'
               type='button'
@@ -40,7 +34,7 @@ const ProjectOpenMic = () => {
               </svg>
             </a>
             <a
-              href='https://github.com/team-open-mic/open-mic/tree/main/frontend'
+              href='https://github.com/momentum-projects/react-trivia-adrmckinney'
               rel='noreferrer'
               target='_blank'
               type='button'
@@ -63,10 +57,12 @@ const ProjectOpenMic = () => {
     <>
       <li
         ref={hoverRef}
-        className='col-span-1 flex flex-col text-center bg-openMic bg-cover bg-center rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
-      />
+        className='col-span-1 flex flex-col text-center bg-trivia bg-cover bg-right rounded-lg shadow divide-y divide-gray-200 w-auto h-64 z-20'
+      >
+        <p className='text-right mr-10 text-gray-300 text-md md:text-lg'>Trivia Night</p>
+      </li>
     </>
   )
 }
 
-export default ProjectOpenMic
+export default ProjectTriviaNight
