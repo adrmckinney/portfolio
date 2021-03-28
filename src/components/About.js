@@ -6,9 +6,9 @@ const About = () => {
         About content Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nostrum minus laborum? Nobis minus ex ratione doloremque consequatur accusamus at esse. Natus repudiandae possimus molestiae aliquam animi vel. Hic, ratione.
       </div>
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 m-6 h-3/4'>
-        <div class='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
+        <div className='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
           {/* <!-- We've used 3xl here, but feel free to try other max-widths based on your needs --> */}
-          <div class='max-w-3xl mx-auto h-full divide-y-2'>
+          <div className='max-w-3xl mx-auto h-full divide-y-2'>
             {/* <!-- Content goes here --> */}
             <p className='text-coolGray-400 text-2xl'>Front End Languages</p>
             <ul className='flex flex-col justify-evenly items-center h-full'>
@@ -21,9 +21,9 @@ const About = () => {
           </div>
         </div>
 
-        <div class='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
+        <div className='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
           {/* <!-- We've used 3xl here, but feel free to try other max-widths based on your needs --> */}
-          <div class='max-w-3xl mx-auto h-full'>
+          <div className='max-w-3xl mx-auto h-full'>
             {/* <!-- Content goes here --> */}
             <p className='text-coolGray-400 text-2xl'>Back End Languages</p>
             <ul className='flex flex-col justify-evenly items-center h-full'>
@@ -36,9 +36,9 @@ const About = () => {
           </div>
         </div>
 
-        <div class='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
+        <div className='col-span-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full'>
           {/* <!-- We've used 3xl here, but feel free to try other max-widths based on your needs --> */}
-          <div class='max-w-3xl mx-auto h-full'>
+          <div className='max-w-3xl mx-auto h-full'>
             {/* <!-- Content goes here --> */}
             <p className='text-coolGray-400 text-2xl'>Dev Tools</p>
             <ul className='flex flex-col justify-evenly items-center h-full'>
