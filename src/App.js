@@ -35,12 +35,12 @@ function App () {
         {/* <div className='bg-white bg-opacity-40 w-full h-full absolute inset-0' /> */}
         <div
           ref={homeRef}
-          className='bg-moon bg-no-repeat bg-cover bg-center sm:bg-center h-screen w-full flex flex-col justify-center items-center'
+          className='bg-computer bg-no-repeat bg-cover bg-center sm:bg-center h-screen w-full flex flex-col justify-center items-center'
         >
           <Home />
         </div>
       </span>
-      <div ref={aboutRef} className='bg-indigo-200 h-screen'>
+      <div ref={aboutRef} className='bg-gray-800 h-screen'>
         <About />
       </div>
       <div ref={projectsRef} className='bg-blueGray-100 h-screen'>

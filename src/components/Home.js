@@ -17,9 +17,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='w-full'>
-        <p className='text-white text-sm absolute right-6 bottom-2'>Photo by: Abed Ismail</p>
-      </div>
     </>
   )
 }
