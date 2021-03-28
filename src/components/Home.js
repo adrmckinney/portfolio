@@ -18,7 +18,14 @@ const Home = () => {
         </div>
       </div>
       <div className='w-full'>
-        <p className='text-white text-sm absolute right-6 bottom-2'>Photo by: Tianyi Ma</p>
+        <p className='text-white text-xs absolute right-6 bottom-2'>
+          <a
+            href='https://unsplash.com/@tma'
+            rel='noreferrer'
+            target='_blank'
+          >Photo by: Tianyi Ma
+          </a>
+        </p>
       </div>
     </>
   )

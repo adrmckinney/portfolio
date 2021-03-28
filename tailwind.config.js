@@ -34,7 +34,7 @@ module.exports = {
         'coffee-shop': "url('./images/jonas-jacobsson-1iTKoFJvJ6E-unsplash.jpg')",
         computer: "url('./images/clement-helardot-95YRwf6CNw8-unsplash.jpg')",
         'close-computer': "url('./images/tianyi-ma-WiONHd_zYI4-unsplash.jpg')",
-        openMic: "url('./images/new_logo_purple.jpg')",
+        openMic: "url('./images/openMicTwo.png')",
         moon: "url('./images/abed-ismail-_jhUrn9o8yM-unsplash.jpg')",
         greetly: "url('./images/greetly-title.png')",
         trivia: "url('./images/triviaFour.png')",

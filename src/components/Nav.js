@@ -98,7 +98,7 @@ const Nav = ({ handleScroll }) => {
               <div className='flex space-x-1'>
                 {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
-                <span className={`${showSolidNav ? 'text-gray-300' : 'text-gray-200'} px-2 py-2 rounded-md text-sm font-medium self-center`}>Site Powered By:</span>
+                <span className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-sm font-medium self-center`}>Site Powered By:</span>
 
                 <a
                   href='https://reactjs.org/'
@@ -110,7 +110,7 @@ const Nav = ({ handleScroll }) => {
                 </a>
 
                 <a
-                  className={`${showSolidNav ? 'bg-gray-500' : 'bg-none hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium self-center`}
+                  className={`${showSolidNav ? 'bg-gray-500' : 'bg-gray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium self-center`}
                   href='https://tailwindcss.com/'
                   rel='noreferrer'
                   target='_blank'
