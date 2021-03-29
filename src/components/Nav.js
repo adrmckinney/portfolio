@@ -3,7 +3,7 @@ import reactLogo from '../images/reactLogo.svg'
 import { useState } from 'react'
 import useDocumentScrollThrottled from './customComponents/useDocumentScrollThrottled'
 
-const Nav = ({ handleScroll }) => {
+const Nav = ({ handleScroll, navHighlight }) => {
   const [showSolidNav, setShowSolidNav] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
 
@@ -125,11 +125,11 @@ const Nav = ({ handleScroll }) => {
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
         {showMenu &&
           <div className='sm:hidden' id='mobile-menu'>
-            <div className='px-2 pt-2 pb-3 space-y-1'>
+            <div className='px-2 pt-2 pb-3 space-y-1 bg-white'>
               {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
               <span
-                className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                 onClick={() => {
                   setShowMenu(false)
                   handleScroll('homeRef')
@@ -138,7 +138,7 @@ const Nav = ({ handleScroll }) => {
               </span>
 
               <span
-                className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                 onClick={() => {
                   setShowMenu(false)
                   handleScroll('aboutRef')
@@ -147,7 +147,7 @@ const Nav = ({ handleScroll }) => {
               </span>
 
               <span
-                className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                 onClick={() => {
                   setShowMenu(false)
                   handleScroll('projectsRef')
@@ -156,7 +156,7 @@ const Nav = ({ handleScroll }) => {
               </span>
 
               <span
-                className='text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
+                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
                 onClick={() => {
                   setShowMenu(false)
                   handleScroll('quickAppsRef')
