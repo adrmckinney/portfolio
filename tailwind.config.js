@@ -28,7 +28,15 @@ module.exports = {
         purple: colors.purple,
         fuchsia: colors.fuchsia,
         pink: colors.pink,
-        black: colors.black
+        black: colors.black,
+        vermilion: '#D14126',
+        lightVermilion: '#E5816F',
+        mustard: '#CFB026',
+        offBlue: '#665794',
+        anitiqueFuchsia: '#93578D',
+        softFuchsia: '#D3B5D0',
+        dimGray: '#5c5f85'
+
       },
       backgroundImage: theme => ({
         'coffee-shop': "url('./images/jonas-jacobsson-1iTKoFJvJ6E-unsplash.jpg')",

@@ -2,7 +2,7 @@
 const QuickAppsSectionHeader = () => {
   return (
     <>
-      <div className='pb-5 pt-20 px-4 sm:pl-20 bg-gradient-to-t from-blueGray-400 to-blue-500 border-b border-t border-blueGray-700'>
+      <div className='pb-5 pt-20 px-4 sm:pl-20 bg-gradient-to-t to-anitiqueFuchsia from-lightVermilion border-b border-t border-blueGray-700'>
         <h3 className='text-4xl leading-6 font-medium text-blueGray-700'>
           Quick Apps
         </h3>
