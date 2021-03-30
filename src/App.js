@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React, { useRef } from 'react'
 import './App.css'
 import About from './components/About'
 import Home from './components/Home'
@@ -17,13 +16,11 @@ function App () {
   const aboutRef = useRef(null)
   const projectsRef = useRef(null)
   const quickAppsRef = useRef(null)
-  const [navHighlight, setNavHighlight] = useState('')
 
   const handleScroll = ref => {
     if (ref === 'homeRef') {
       return homeRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'aboutRef') {
-      setNavHighlight('aboutRef')
       return aboutRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'projectsRef') {
       return projectsRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -35,7 +32,7 @@ function App () {
   return (
     <div className='App h-screen'>
       <div className='fixed w-full top-0 z-50'>
-        <Nav handleScroll={handleScroll} navHighlight={navHighlight} />
+        <Nav handleScroll={handleScroll} />
       </div>
       <div
         ref={homeRef}
@@ -43,7 +40,7 @@ function App () {
       >
         <Home />
       </div>
-      <div ref={aboutRef} className='bg-white md:h-screen'>
+      <div ref={aboutRef} className='bg-white lg:h-screen'>
         <About />
       </div>
       <div ref={projectsRef} className='bg-white md:h-screen'>

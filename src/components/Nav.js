@@ -1,12 +1,15 @@
-import tailwindLogo from '../images/tailwindLogo.svg'
-import reactLogo from '../images/reactLogo.svg'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import useDocumentScrollThrottled from './customComponents/useDocumentScrollThrottled'
+import MobileNav from './MobileNav'
+import SitePoweredBy from './SitePoweredBy'
 
-const Nav = ({ handleScroll, navHighlight }) => {
+const Nav = ({ handleScroll }) => {
   const [showSolidNav, setShowSolidNav] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const [showPowerMenu, setShowPowerMenu] = useState(false)
+  const dropdownRef = useRef(null)
 
+  // scroll on click feature
   const MINIMUM_SCROLL = 0
   const TIMEOUT_DELAY = 0
 
@@ -22,6 +25,29 @@ const Nav = ({ handleScroll, navHighlight }) => {
     }, TIMEOUT_DELAY)
   })
 
+  // close menu on window click feature
+  useEffect(() => {
+    const pageClickEvent = (e) => {
+      if (dropdownRef.current !== null && !dropdownRef.current.contains(e.target)) {
+        setShowMenu(false)
+        setShowPowerMenu(false)
+      }
+    }
+    if (showMenu || showPowerMenu) {
+      window.addEventListener('click', pageClickEvent)
+    }
+    return () => {
+      window.removeEventListener('click', pageClickEvent)
+    }
+  }, [showMenu, showPowerMenu])
+
+  // nav btn className
+  const navBtnClass = () => {
+    return (
+      `${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-xs lg:text-sm font-medium`
+    )
+  }
+
   return (
     <>
       <nav className={`${showSolidNav ? 'sm:bg-gray-800' : 'bg-none'}`}>
@@ -34,6 +60,7 @@ const Nav = ({ handleScroll, navHighlight }) => {
                 className='inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
                 aria-controls='mobile-menu'
                 aria-expanded='false'
+                ref={dropdownRef}
                 onClick={() => setShowMenu(!showMenu)}
               >
                 <span className='sr-only'>Open main menu</span>
@@ -68,103 +95,65 @@ const Nav = ({ handleScroll, navHighlight }) => {
                   {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
 
                   <span
-                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
+                    className={navBtnClass()}
                     onClick={() => handleScroll('homeRef')}
                   >Home
                   </span>
 
                   <span
-                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
+                    className={navBtnClass()}
                     onClick={() => handleScroll('aboutRef')}
                   >About
                   </span>
 
                   <span
-                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
+                    className={navBtnClass()}
                     onClick={() => handleScroll('projectsRef')}
                   >School Projects
                   </span>
 
                   <span
-                    href='#'
-                    className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'text-blueGray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
+                    className={navBtnClass()}
                     onClick={() => handleScroll('quickAppsRef')}
                   >Quick Apps
                   </span>
+
+                  <a
+                    href='mailto:adrmckinney@gmail.com'
+                    className={navBtnClass()}
+                    rel='noreferrer'
+                    target='_blank'
+                  >Email
+                  </a>
+
+                  <a
+                    href='https://docs.google.com/document/d/16mTFnVdAz4Yb_tHHnhAmusoOGm7T5ujq0kwpJjTTt6Y/edit?usp=sharing'
+                    className={navBtnClass()}
+                    rel='noreferrer'
+                    target='_blank'
+                  >Resume
+                  </a>
+
                 </div>
               </div>
             </div>
             <div className='hidden sm:block sm:ml-6'>
-              <div className='flex space-x-1'>
-                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-
-                <span className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-sm font-medium self-center`}>Site Powered By:</span>
-
-                <a
-                  href='https://reactjs.org/'
-                  className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img className='h-8 w-auto' src={reactLogo} alt='react logo' />
-                </a>
-
-                <a
-                  className={`${showSolidNav ? 'bg-gray-500' : 'bg-gray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium self-center`}
-                  href='https://tailwindcss.com/'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img className='h-3 w-auto' src={tailwindLogo} alt='tailwind logo' />
-                </a>
+              <div>
+                <button
+                  ref={dropdownRef}
+                  className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-xs lg:text-sm font-medium self-center lg:hidden block`}
+                  onClick={() => setShowPowerMenu(showPowerMenu => !showPowerMenu)}
+                >Site Powered By:
+                </button>
               </div>
+              <SitePoweredBy showSolidNav={showSolidNav} showPowerMenu={showPowerMenu} setShowPowerMenu={setShowPowerMenu} />
             </div>
           </div>
         </div>
 
         {/* <!-- Mobile menu, show/hide based on menu state. --> */}
         {showMenu &&
-          <div className='sm:hidden' id='mobile-menu'>
-            <div className='px-2 pt-2 pb-3 space-y-1 bg-white'>
-              {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-
-              <span
-                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                onClick={() => {
-                  setShowMenu(false)
-                  handleScroll('homeRef')
-                }}
-              >Home
-              </span>
-
-              <span
-                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                onClick={() => {
-                  setShowMenu(false)
-                  handleScroll('aboutRef')
-                }}
-              >About
-              </span>
-
-              <span
-                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                onClick={() => {
-                  setShowMenu(false)
-                  handleScroll('projectsRef')
-                }}
-              >School Projects
-              </span>
-
-              <span
-                className='text-gray-500 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-                onClick={() => {
-                  setShowMenu(false)
-                  handleScroll('quickAppsRef')
-                }}
-              >Quick Apps
-              </span>
-            </div>
-          </div>}
+          <MobileNav setShowMenu={setShowMenu} handleScroll={handleScroll} />}
 
       </nav>
 
