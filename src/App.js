@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import QuickApps from './components/QuickApps'
 import smoothscroll from 'smoothscroll-polyfill'
 
+// makes the scroll feature work on safari
 smoothscroll.polyfill()
 
 // here's a good site when you want to build the nav highlight on scroll https://codedaily.io/tutorials/Sticky-Header-with-Highlighting-Sections-on-Scroll. . .it'll take some time to implement
@@ -34,10 +35,7 @@ function App () {
       <div className='fixed w-full top-0 z-50'>
         <Nav handleScroll={handleScroll} />
       </div>
-      <div
-        ref={homeRef}
-        className='bg-black bg-close-computer bg-no-repeat bg-contain md:bg-cover bg-center md:bg-center h-screen w-full flex flex-col justify-center items-center'
-      >
+      <div ref={homeRef} className='grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 h-screen w-full bg-black bg-close-computer bg-no-repeat bg-contain md:bg-cover bg-center md:bg-center'>
         <Home />
       </div>
       <div ref={aboutRef} className='bg-white lg:h-screen'>
