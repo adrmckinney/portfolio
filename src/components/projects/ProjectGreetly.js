@@ -40,7 +40,7 @@ const ProjectGreetly = () => {
               </svg>
             </a>
             <a
-              href='https://github.com/momentum-projects/group-social-ecards-david-dan-jesse/tree/main/frontend'
+              href='https://github.com/adrmckinney/Greetly/tree/main/frontend'
               rel='noreferrer'
               target='_blank'
               type='button'

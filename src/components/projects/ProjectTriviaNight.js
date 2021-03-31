@@ -34,7 +34,7 @@ const ProjectTriviaNight = () => {
               </svg>
             </a>
             <a
-              href='https://github.com/momentum-projects/react-trivia-adrmckinney'
+              href='https://github.com/adrmckinney/trivia-night'
               rel='noreferrer'
               target='_blank'
               type='button'

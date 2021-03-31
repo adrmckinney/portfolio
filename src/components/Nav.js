@@ -1,4 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
+import { Transition } from '@headlessui/react'
+import tailwindLogo from '../images/tailwindLogo.svg'
+import reactLogo from '../images/reactLogo.svg'
 import useDocumentScrollThrottled from './customComponents/useDocumentScrollThrottled'
 import MobileNav from './MobileNav'
 import SitePoweredBy from './SitePoweredBy'
@@ -50,7 +53,7 @@ const Nav = ({ handleScroll }) => {
 
   return (
     <>
-      <nav className={`${showSolidNav ? 'sm:bg-gray-800' : 'bg-none'}`}>
+      <nav className={`${showSolidNav ? 'sm:bg-gray-600' : 'bg-none'}`}>
         <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
           <div className='relative flex items-center justify-between h-16'>
             <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -137,16 +140,62 @@ const Nav = ({ handleScroll }) => {
                 </div>
               </div>
             </div>
-            <div className='hidden sm:block sm:ml-6'>
-              <div>
-                <button
-                  ref={dropdownRef}
-                  className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-xs lg:text-sm font-medium self-center lg:hidden block`}
-                  onClick={() => setShowPowerMenu(showPowerMenu => !showPowerMenu)}
-                >Site Powered By:
-                </button>
+            <span className='hidden lg:flex'>
+              <span
+                  // ref={dropdownRef}
+                className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-xs lg:text-sm font-medium self-center lg:hidden block`}
+              >Site Powered By:
+              </span>
+              <div className='hidden lg:flex space-x-1'>
+                {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+
+                <span className={`${showSolidNav ? 'text-gray-300' : 'text-blueGray-500'} px-2 py-2 rounded-md text-xs lg:text-sm font-medium self-center`}>Site Powered By:</span>
+
+                <a
+                  href='https://reactjs.org/'
+                  className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700 hover:text-white' : 'hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium`}
+                  rel='noreferrer'
+                  target='_blank'
+                >
+                  <img className='h-8 w-auto' src={reactLogo} alt='react logo' />
+                </a>
+
+                <a
+                  className={`${showSolidNav ? 'bg-none' : 'bg-gray-500 hover:bg-blueGray-100'} px-3 py-2 rounded-md text-sm font-medium self-center`}
+                  href='https://tailwindcss.com/'
+                  rel='noreferrer'
+                  target='_blank'
+                >
+                  <img className='h-3 w-auto' src={tailwindLogo} alt='tailwind logo' />
+                </a>
               </div>
-              <SitePoweredBy showSolidNav={showSolidNav} showPowerMenu={showPowerMenu} setShowPowerMenu={setShowPowerMenu} />
+            </span>
+
+            <div className='hidden sm:block sm:ml-6'>
+              <button
+                className={`${showSolidNav ? 'text-gray-300 hover:bg-gray-700' : 'text-blueGray-500 hover:bg-blueGray-100'} px-2 py-2 rounded-md text-xs lg:text-sm font-medium self-center lg:hidden block`}
+                onClick={() => setShowPowerMenu(showPowerMenu => !showPowerMenu)}
+              >Site Powered By:
+              </button>
+              <Transition
+                show={showPowerMenu}
+                enter='transition ease-out duration-100'
+                enterFrom='transform opacity-0 scale-95'
+                enterTo='transform opacity-100 scale-100'
+                leave='transition ease-in duration-75'
+                leaveFrom='transform opacity-100 scale-100'
+                leaveTo='transform opacity-0 scale-95'
+              >
+                <div
+                  className='origin-top-right absolute right-0 mt-6 w-48 rounded-md shadow-lg py-1 bg-gray-600 ring-1 ring-black ring-opacity-5 focus:outline-none z-10'
+                  role='menu'
+                  aria-orientation='vertical'
+                  aria-labelledby='user-menu'
+                  ref={dropdownRef}
+                >
+                  <SitePoweredBy showSolidNav={showSolidNav} />
+                </div>
+              </Transition>
             </div>
           </div>
         </div>
