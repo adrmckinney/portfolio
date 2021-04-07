@@ -12,20 +12,10 @@ module.exports = {
         coolGray: colors.coolGray,
         trueGray: colors.trueGray,
         warmGray: colors.warmGray,
-        red: colors.red,
-        lime: colors.lime,
-        green: colors.green,
         emarald: colors.emerald,
         teal: colors.teal,
         cyan: colors.cyan,
         blue: colors.blue,
-        lightBlue: colors.lightBlue,
-        yellow: colors.yellow,
-        amber: colors.amber,
-        orange: colors.orange,
-        rose: colors.rose,
-        violet: colors.violet,
-        purple: colors.purple,
         fuchsia: colors.fuchsia,
         pink: colors.pink,
         black: colors.black,
@@ -55,9 +45,10 @@ module.exports = {
     extend: {}
   },
   plugins: [
+    // { '@tailwindcss/jit': {} },
     require('@tailwindcss/aspect-ratio'),
     require('tailwindcss-animatecss')({
-      classes: ['animate__animated', 'animate__fadeIn', 'animate__bounceIn', 'animate__lightSpeedOut', 'animate__slow', 'animate__slower', 'animate__delay', 'animate__delay-5', 'animate__fast'],
+      classes: ['animate__animated', 'animate__fadeIn', 'animate__slow', 'animate__slower', 'animate__delay', 'animate__delay-5'],
       settings: {
         animatedSpeed: 5000,
         heartBeatSpeed: 1000,

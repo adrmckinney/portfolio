@@ -17,8 +17,8 @@ const Home = () => {
           <p className='sm:hidden text-4xl text-white text-center'>software engineer</p>
         </div>
       </div>
-      <div className='w-full'>
-        <p className='text-white text-xs absolute right-6 bottom-2'>
+      <div className='grid col-start-1 row-start-3 sm:col-start-3 sm:row-start-3 justify-end items-end pr-2 pb-2'>
+        <p className='text-white text-xs'>
           <a
             href='https://unsplash.com/@tma'
             rel='noreferrer'
