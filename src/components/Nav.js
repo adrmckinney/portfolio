@@ -111,6 +111,12 @@ const Nav = ({ handleScroll }) => {
 
                   <span
                     className={navBtnClass()}
+                    onClick={() => handleScroll('freelanceRef')}
+                  >Freelance
+                  </span>
+
+                  <span
+                    className={navBtnClass()}
                     onClick={() => handleScroll('projectsRef')}
                   >School Projects
                   </span>

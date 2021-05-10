@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Projects from './components/Projects'
 import QuickApps from './components/QuickApps'
 import smoothscroll from 'smoothscroll-polyfill'
+import FreelanceProjects from './components/FreelanceProjects'
 
 // makes the scroll feature work on safari
 smoothscroll.polyfill()
@@ -15,6 +16,7 @@ smoothscroll.polyfill()
 function App () {
   const homeRef = useRef(null)
   const aboutRef = useRef(null)
+  const freelanceRef = useRef(null)
   const projectsRef = useRef(null)
   const quickAppsRef = useRef(null)
 
@@ -23,6 +25,8 @@ function App () {
       return homeRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'aboutRef') {
       return aboutRef.current.scrollIntoView({ behavior: 'smooth' })
+    } else if (ref === 'freelanceRef') {
+      return freelanceRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'projectsRef') {
       return projectsRef.current.scrollIntoView({ behavior: 'smooth' })
     } else if (ref === 'quickAppsRef') {
@@ -40,6 +44,9 @@ function App () {
       </div>
       <div ref={aboutRef} className='bg-white lg:h-screen'>
         <About />
+      </div>
+      <div ref={freelanceRef} className='bg-white md:h-screen'>
+        <FreelanceProjects />
       </div>
       <div ref={projectsRef} className='bg-white md:h-screen'>
         <Projects />
