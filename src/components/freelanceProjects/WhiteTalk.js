@@ -18,7 +18,7 @@ const FEATURES = [
   {
     name: 'Front End',
     description:
-      'I built the front end with React. I used a few libraries for styling and logistics: Tailwindcss, React Datepicker, Moment.js. I built templates on the front end to use for Djoser\'s password/username reset features. It is deployed on Netfily.',
+      'I built the front end with React and deployed on Netlify. I used a few libraries for styling and logistics: Tailwindcss, React Datepicker, Moment.js. I built templates on the front end to use for Djoser\'s password and username reset features. Users are able to experience the site on mobile; full mobile utility is still in the works for admin.',
     icon: DesktopComputerIcon
   },
   {
