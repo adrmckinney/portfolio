@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.1",
-    "@headlessui/react": "^0.3.1",
+    "@headlessui/react": "^1.1.1-084a249",
+    "@heroicons/react": "^1.0.1",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
