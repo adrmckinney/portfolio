@@ -5,7 +5,9 @@ const FreelanceProjects = () => {
   return (
     <>
       <FreelanceSectionHeader />
-      <WhiteTalk />
+      <div className=''>
+        <WhiteTalk />
+      </div>
     </>
   )
 }

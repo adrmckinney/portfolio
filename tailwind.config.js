@@ -37,7 +37,8 @@ module.exports = {
         greetly: "url('./images/greetly-title.png')",
         trivia: "url('./images/triviaFour.png')",
         snippet: "url('./images/snippetDate.png')",
-        covid: "url('./images/covid.png')"
+        covid: "url('./images/covid.png')",
+        whiteTalk: "url('./images/white-talk.png')"
       })
     }
   },

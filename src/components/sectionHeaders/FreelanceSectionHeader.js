@@ -6,7 +6,7 @@ const FreelanceSectionHeader = () => {
         <h3 className='text-4xl leading-6 font-medium text-blueGray-700'>
           Freelance Projects
         </h3>
-        <p className='mt-2 leading-relaxed max-w-4xl text-md text-blueGray-700'>Here are a few projects I worked on during my time at Momentum Learn. Some have been solo projects and others with a team. Features of the app that I built or helped build are in blue font.</p>
+        <p className='mt-2 leading-relaxed max-w-4xl text-md text-blueGray-700'>Here are some sites I've built as a freelance developer.</p>
       </div>
     </>
   )
