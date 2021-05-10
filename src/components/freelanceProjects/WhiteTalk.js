@@ -125,7 +125,7 @@ export default function WhiteTalk () {
               Racial Equity White Talk is a site where white people can sign up to have authentic and uncomfortable conversations about racism and whiteness.
             </p>
             <p className='mt-4 max-w-2xl text-xl text-center md:text-left text-red-700 font-bold lg:mx-auto'>
-              Please Note: This site is in testing mode. The code has not yet been scrubbed and there are still a lot of bugs to be fixed.
+              Please Note: This site is in testing phase. The code has not yet been scrubbed, there are still a lot of bugs to be fixed, and the content is still being written and edited.
             </p>
           </div>
           <div className='lg:text-center border-4 p-1 border-gray-400 w-full md:w-1/2'>
