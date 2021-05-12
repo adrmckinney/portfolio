@@ -144,7 +144,7 @@ const Nav = ({ handleScroll }) => {
                   </a>
 
                   {/* debugger for window size breakpoints */}
-                  <div className='hidden sm:block md:hidden text-red-700'>
+                  {/* <div className='hidden sm:block md:hidden text-red-700'>
                     small
                   </div>
                   <div className='hidden md:block lg:hidden text-red-700'>
@@ -152,7 +152,7 @@ const Nav = ({ handleScroll }) => {
                   </div>
                   <div className='hidden lg:block text-red-700'>
                     large
-                  </div>
+                  </div> */}
 
                 </div>
               </div>
