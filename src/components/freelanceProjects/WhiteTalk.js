@@ -12,7 +12,7 @@ const FEATURES = [
   {
     name: 'Admin Workstation',
     description:
-      'My client needed an easier way to keep track of people who are interested in signing up for sessions and an easy way to update the site with new sessions. I created a session registration database that allows my client to easily email registrants and update their accounts. This site has many forms my client can use to quickly update the site on her own.',
+      'My client needed an easier way to keep track of people who are interested in signing up for sessions and an easy way to update the site with new sessions. I created a session registration database that allows my client to easily email registrants and update their accounts. The admin has access to a handful of CRUD forms related to sessions, other administrators, and registrants.',
     icon: BriefcaseIcon
   },
   {
@@ -125,7 +125,7 @@ export default function WhiteTalk () {
               Racial Equity White Talk is a site where white people can sign up to have authentic and uncomfortable conversations about racism and whiteness.
             </p>
             <p className='mt-4 max-w-2xl text-xl text-center md:text-left text-red-700 font-bold lg:mx-auto'>
-              Please Note: This site is in testing phase. The code has not yet been scrubbed, there are still a lot of bugs to be fixed, and the content is still being written and edited.
+              Please Note: This site is still in development.
             </p>
           </div>
           <div className='lg:text-center border-4 p-1 border-gray-400 w-full md:w-1/2'>
