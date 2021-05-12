@@ -143,6 +143,17 @@ const Nav = ({ handleScroll }) => {
                   >Resume
                   </a>
 
+                  {/* debugger for window size breakpoints */}
+                  <div className='hidden sm:block md:hidden text-red-700'>
+                    small
+                  </div>
+                  <div className='hidden md:block lg:hidden text-red-700'>
+                    medium
+                  </div>
+                  <div className='hidden lg:block text-red-700'>
+                    large
+                  </div>
+
                 </div>
               </div>
             </div>
