@@ -38,7 +38,8 @@ module.exports = {
         trivia: "url('./images/triviaFour.png')",
         snippet: "url('./images/snippetDate.png')",
         covid: "url('./images/covid.png')",
-        whiteTalk: "url('./images/white-talk.png')"
+        whiteTalk: "url('./images/white-talk.png')",
+        juniousBrickhouse: "url('./images/juniousBrickhouse.png')"
       })
     }
   },
