@@ -1,4 +1,4 @@
-import { DatabaseIcon, UserGroupIcon, DesktopComputerIcon, BriefcaseIcon, ChatAltIcon } from '@heroicons/react/outline'
+import { UserGroupIcon, DesktopComputerIcon, ChatAltIcon } from '@heroicons/react/outline'
 import useHover from '../customComponents/useHover'
 
 const FEATURES = [
@@ -11,7 +11,7 @@ const FEATURES = [
   {
     name: 'Front End',
     description:
-      'I built this site with React and deployed it on Netlify. I used Tailwindcss for styling and all animations. I used Lodash for scroll throttling to handle the document scrolling feature when the user clicks on a nav button.',
+      'I built this site with React and deployed it on Netlify. I used Tailwindcss for styling and all animations. I used Lodash for scroll throttling to handle the document scrolling feature when the user clicks on a nav button. Because I used parallax effects throughout, I used IntersectionObserver to trigger navbar and other animation when components come into the viewport. The site contains a lot of images, which caused scrolling to lag and jump. To regain performance I resized many of the images using ImageMagick.',
     icon: DesktopComputerIcon
   },
   {
