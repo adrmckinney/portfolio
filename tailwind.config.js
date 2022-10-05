@@ -39,7 +39,8 @@ module.exports = {
         snippet: "url('./images/snippetDate.png')",
         covid: "url('./images/covid.png')",
         whiteTalk: "url('./images/white-talk.png')",
-        juniousBrickhouse: "url('./images/juniousBrickhouse.png')"
+        juniousBrickhouse: "url('./images/juniousBrickhouse.png')",
+        handAndFoot: "url('./images/hand_and_foot.png')",
       })
     }
   },
