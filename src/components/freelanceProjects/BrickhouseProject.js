@@ -35,7 +35,7 @@ export default function WhiteTalk () {
           <div className='flex flex-col justify-around p-4 h-full text-white'>
             <span className='flex justify-evenly space-x-2 sm:space-x-0'>
               <a
-                href='https://juniousbrickhouse.netlify.app/'
+                href='https://juniousbrickhouse.com/'
                 rel='noreferrer'
                 target='_blank'
                 type='button'
@@ -80,9 +80,6 @@ export default function WhiteTalk () {
             </p>
             <p className='mt-4 max-w-2xl text-xl text-center md:text-left text-gray-500 lg:mx-auto'>
               Junious Brickhous is an educator, choreographer and cultural preservationist. This site allows users to learn about Junious' work, life journey, and to contact him.
-            </p>
-            <p className='mt-4 max-w-2xl text-xl text-center md:text-left text-red-700 font-bold lg:mx-auto'>
-              Please Note: This site is still in development.
             </p>
           </div>
           <div className='lg:text-center border-4 p-1 border-gray-400 w-full md:w-1/2 h-56 md:h-40 lg:h-72'>

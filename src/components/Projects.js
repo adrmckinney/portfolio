@@ -9,10 +9,31 @@ const Projects = () => {
     <>
       <ProjectSectionHeader />
       <ul className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 m-6'>
-        <ProjectOpenMic />
+      <div className='flex flex-col'>
+          <h2 className='text-2xl font-bold tracking-tight text-gray-600 pb-4'>
+            OpenMic
+          </h2>
+          <ProjectOpenMic />
+
+      </div>
+      <div className='flex flex-col'>
+          <h2 className='text-2xl font-bold tracking-tight text-gray-600 pb-4'>
+            Greetly
+          </h2>
         <ProjectGreetly />
-        <ProjectTriviaNight />
-        <ProjectSnippets />
+      </div>
+      <div className='flex flex-col'>
+          <h2 className='text-2xl font-bold tracking-tight text-gray-600 pb-4'>
+            Trivia Night
+          </h2>
+          <ProjectTriviaNight />
+      </div>
+      <div className='flex flex-col'>
+          <h2 className='text-2xl font-bold tracking-tight text-gray-600 pb-4'>
+            Snippets
+          </h2>
+          <ProjectSnippets />
+      </div>
       </ul>
     </>
   )
